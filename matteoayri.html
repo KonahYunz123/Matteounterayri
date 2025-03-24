@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Matteo ist blöd</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+        }
+        #message {
+            font-size: 24px;
+            text-align: center;
+        }
+        button {
+            padding: 15px 30px;
+            font-size: 18px;
+            cursor: pointer;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <button onclick="rickroll()">Klick mich!</button>
+        <p id="message"></p>
+    </div>
+
+    <script>
+        function rickroll() {
+            // Leitet zur Rickroll-YouTube-Seite weiter
+            window.location.href = "https://www.youtube.com/watch?v=dQw4w9WgXcQ";
+        }
+
+        // Optional: Bei Klick irgendwo anders erscheint immer noch "Matteo ist blöd"
+        document.addEventListener('click', function(event) {
+            if (event.target.tagName !== 'BUTTON') {
+                document.getElementById('message').innerHTML = "Matteo ist blöd";
+            }
+        });
+    </script>
+</body>
+</html>
